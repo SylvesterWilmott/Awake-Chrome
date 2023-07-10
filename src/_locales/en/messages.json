@@ -1,0 +1,23 @@
+{
+  "EXT_NAME": {
+    "message": "Awake - Keep awake while downloading"
+  },
+  "EXT_NAME_SHORT": {
+    "message": "Awake"
+  },
+  "EXT_DESCRIPTION": {
+    "message": "Prevent your computer from going to sleep while downloads are in progress."
+  },
+  "SHORTCUT": {
+    "message": "Ctrl + Shift + O"
+  },
+  "SHORTCUT_MAC": {
+    "message": "\u21E7\u2318O"
+  },
+  "MENU_DOWNLOADS": {
+    "message": "Activate during downloads"
+  },
+  "MENU_SOUNDS": {
+    "message": "Sounds"
+  }
+}
