@@ -29,7 +29,7 @@ async function init (info) {
     await loadPreferences()
     await updateTitle()
 
-    if (info.reason === 'update') {
+    if (info.reason === 'install') {
       await showOnboarding()
     }
   } catch (error) {
