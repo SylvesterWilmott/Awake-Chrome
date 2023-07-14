@@ -9,6 +9,7 @@ import * as menu from './js/menu.js'
 import * as offscreen from './js/offscreen.js'
 import * as power from './js/power.js'
 import * as storage from './js/storage.js'
+import * as tabs from './js/tabs.js'
 
 chrome.idle.setDetectionInterval(60)
 
@@ -22,11 +23,26 @@ chrome.contextMenus.onClicked.addListener(onMenuClicked)
 
 const throttledplaySound = throttle(playSound, 100)
 
-async function init () {
+async function init (info) {
   try {
     await setupContextMenu()
     await loadPreferences()
     await updateTitle()
+
+    if (info.reason === 'install') {
+      await showOnboarding()
+    }
+  } catch (error) {
+    handleError(error)
+  }
+}
+
+async function showOnboarding () {
+  try {
+    const path = 'onboarding/html/welcome.html'
+    const relativeUrl = chrome.runtime.getURL(path)
+
+    await tabs.create(relativeUrl)
   } catch (error) {
     handleError(error)
   }

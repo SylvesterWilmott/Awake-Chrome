@@ -19,5 +19,38 @@
   },
   "MENU_SOUNDS": {
     "message": "Sounds"
+  },
+  "WELCOME": {
+    "message": "Welcome to Awake"
+  },
+  "WELCOME_MESSAGE": {
+    "message": "Thanks for installing Awake, the extension that prevents your system from going to sleep. To get started:"
+  },
+  "TUTORIAL_STEP_1_NUMBER": {
+    "message": "1"
+  },
+  "TUTORIAL_STEP_2_NUMBER": {
+    "message": "2"
+  },
+  "TUTORIAL_STEP_3_NUMBER": {
+    "message": "3"
+  },
+  "TUTORIAL_STEP_1": {
+    "message": "Pin the extension icon and click it to enable or disable the keep awake utility or use the keyboard shortcut <code>$shortcut$</code>.",
+    "placeholders": {
+      "shortcut": {
+        "content": "$1",
+        "example": "Platform shortcut"
+      }
+    }
+  },
+  "TUTORIAL_STEP_2": {
+    "message": "When you start downloading a file, Awake will automatically activate."
+  },
+  "TUTORIAL_STEP_3": {
+    "message": "Right-click the extension icon for preferences."
+  },
+  "WELCOME_DISMISS": {
+    "message": "OK"
   }
 }
