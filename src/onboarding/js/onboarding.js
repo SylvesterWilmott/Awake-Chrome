@@ -19,21 +19,22 @@ async function localize () {
     }
   }
 
-  const platformStrings = document.querySelectorAll('[data-localizeplatform]')
+  const conditionalStrings = document.querySelectorAll('[data-localizeConditional]')
 
-  if (platformStrings) {
+  if (conditionalStrings) {
     try {
       const platformInfo = await getPlatformInfo()
-      let shortcut
 
-      if (platformInfo.os === 'mac') {
-        shortcut = chrome.i18n.getMessage('SHORTCUT_MAC')
-      } else {
-        shortcut = chrome.i18n.getMessage('SHORTCUT')
-      }
+      for (const s of conditionalStrings) {
+        let shortcut
 
-      for (const s of platformStrings) {
-        s.innerHTML = chrome.i18n.getMessage(s.dataset.localizeplatform, shortcut)
+        if (platformInfo.os === 'mac') {
+          shortcut = chrome.i18n.getMessage(`${s.dataset.platform}_MAC`)
+        } else {
+          shortcut = chrome.i18n.getMessage(`${s.dataset.platform}`)
+        }
+
+        s.innerHTML = chrome.i18n.getMessage(s.dataset.localizeconditional, shortcut)
       }
     } catch (error) {
       handleError(error)
