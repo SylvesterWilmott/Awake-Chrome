@@ -18,14 +18,14 @@ body {
 }
 
 .main-container {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
   transition: opacity 0.35s;
-  padding: 0 24px;
+  padding: 24px;
 }
 
 .inner-container {
