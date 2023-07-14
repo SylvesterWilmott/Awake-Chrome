@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>&#65279;</title>
+    <link rel="icon" href="../images/icon.svg" />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/onboarding.css" />
+    <script type="module" src="../js/onboarding.js"></script>
+  </head>
+  <body>
+    <div class="main-container hidden">
+      <div class="inner-container" id="container">
+        <div class="section">
+          <img src="../images/icon.svg" class="icon" />
+          <h1 class="headline" data-localize="WELCOME"></h1>
+          <p class="footnote" id="version"></p>
+        </div>
+        <div class="section">
+          <p class="body" data-localize="WELCOME_MESSAGE"></p>
+        </div>
+        <div class="section">
+          <div class="step">
+            <div class="step-number">
+              <p data-localize="TUTORIAL_STEP_1_NUMBER"></p>
+            </div>
+            <div class="step-text">
+              <p class="body" data-localizeConditional="TUTORIAL_STEP_1" data-platform="SHORTCUT"></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              <p data-localize="TUTORIAL_STEP_2_NUMBER"></p>
+            </div>
+            <div class="step-text">
+              <p class="body" data-localize="TUTORIAL_STEP_2"></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">
+              <p data-localize="TUTORIAL_STEP_3_NUMBER"></p>
+            </div>
+            <div class="step-text">
+              <p class="body" data-localize="TUTORIAL_STEP_3"></p>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <button
+            class="button"
+            id="dismiss"
+            data-localize="WELCOME_DISMISS"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
