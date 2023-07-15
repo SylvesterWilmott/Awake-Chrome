@@ -13,8 +13,8 @@ import * as tabs from './js/tabs.js'
 
 chrome.idle.setDetectionInterval(60)
 
+chrome.runtime.onInstalled.addListener(onInstalled)
 chrome.runtime.onStartup.addListener(init)
-chrome.runtime.onInstalled.addListener(init)
 chrome.idle.onStateChanged.addListener(onIdleStateChanged)
 chrome.downloads.onCreated.addListener(onDownloadCreated)
 chrome.downloads.onChanged.addListener(onDownloadsChanged)
@@ -23,15 +23,23 @@ chrome.contextMenus.onClicked.addListener(onMenuClicked)
 
 const throttledplaySound = throttle(playSound, 100)
 
-async function init (info) {
+async function onInstalled(info) {
+  try {
+    await init()
+    
+    if (info && 'reason' in info && info.reason === 'install') {
+      await showOnboarding()
+    }
+  } catch (error) {
+    handleError(error)
+  }
+}
+
+async function init () {
   try {
     await setupContextMenu()
     await loadPreferences()
     await updateTitle()
-
-    if ('reason' in info && info.reason === 'install') {
-      await showOnboarding()
-    }
   } catch (error) {
     handleError(error)
   }
